@@ -6,6 +6,10 @@ using HDPHMM
 using PyCall
 using RCall
 
+# Re-export enablemissing(...)
+using HDPHMM: enablemissing
+export enablemissing
+
 export cpt_normal,
     cpt_poisson,
     cpt_poisson_naive,

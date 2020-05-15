@@ -1,0 +1,9 @@
+[deps]
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Glob = "c27321d9-0574-5035-807b-f59d2c89b15c"
+Impute = "f7bf1975-0170-51b9-8c5f-a992d46b9575"
+ProgressMeter = "92933f4c-e287-5a05-a399-4b506db050ca"
+PyPlot = "d330b81b-6aea-500a-939a-2ce795aea3ee"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+Shao17 = "a2da212f-ac99-4a31-a4a0-88b7a61e1298"
