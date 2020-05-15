@@ -1,5 +1,8 @@
 module Shao17
 
+using ConjugatePriors: NormalInverseChisq
+using Distributions
+using HDPHMM
 using PyCall
 using RCall
 
@@ -9,6 +12,7 @@ export cpt_normal,
     cpt_exp,
     cpt_gamma,
     cpt_np,
+    cpt_hmm,
     EvaluationResult,
     WeightedEvaluationResult,
     evaluation_window,
@@ -26,7 +30,10 @@ changepoint_np = Ref{Module}()
 
 function __init__()
     # Python modules
-    pushfirst!(PyVector(pyimport("sys")."path"), joinpath(@__DIR__, "..", "external", "rtt"))
+    pushfirst!(
+        PyVector(pyimport("sys")."path"),
+        joinpath(@__DIR__, "..", "external", "rtt"),
+    )
     copy!(rtt_benchmark, pyimport("localutils.benchmark"))
 
     # R modules
@@ -36,5 +43,6 @@ end
 
 include("benchmark.jl")
 include("detect.jl")
+include("detect_hmm.jl")
 
 end
