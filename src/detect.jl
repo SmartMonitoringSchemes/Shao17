@@ -21,26 +21,50 @@ end
 
 function cpt_normal(x::Vector{Float64}, penalty::AbstractString, minseglen::Int)
     @assert minimum(x) > 0
-    r_cpts(changepoint[].cpt_meanvar(x, var"test.stat"="Normal", method="PELT", penalty=penalty, minseglen=minseglen))
+    r_cpts(changepoint[].cpt_meanvar(
+        x,
+        var"test.stat" = "Normal",
+        method = "PELT",
+        penalty = penalty,
+        minseglen = minseglen,
+    ))
 end
 
 function cpt_poisson(x::Vector{Float64}, penalty::AbstractString, minseglen::Int)
     @assert minimum(x) > 0
     x = round.(Int, x)
     x = x .- minimum(x)
-    r_cpts(changepoint[].cpt_meanvar(x, var"test.stat"="Poisson", method="PELT", penalty=penalty, minseglen=minseglen))
+    r_cpts(changepoint[].cpt_meanvar(
+        x,
+        var"test.stat" = "Poisson",
+        method = "PELT",
+        penalty = penalty,
+        minseglen = minseglen,
+    ))
 end
 
 function cpt_poisson_naive(x::Vector{Float64}, penalty::AbstractString, minseglen::Int)
     @assert minimum(x) > 0
     x = round.(Int, x)
-    r_cpts(changepoint[].cpt_meanvar(x, var"test.stat"="Poisson", method="PELT", penalty=penalty, minseglen=minseglen))
+    r_cpts(changepoint[].cpt_meanvar(
+        x,
+        var"test.stat" = "Poisson",
+        method = "PELT",
+        penalty = penalty,
+        minseglen = minseglen,
+    ))
 end
 
 function cpt_exp(x::Vector{Float64}, penalty::AbstractString, minseglen::Int)
     @assert minimum(x) > 0
     x = x .- minimum(x)
-    r_cpts(changepoint[].cpt_meanvar(x, var"test.stat"="Exponential", method="PELT", penalty=penalty, minseglen=minseglen))
+    r_cpts(changepoint[].cpt_meanvar(
+        x,
+        var"test.stat" = "Exponential",
+        method = "PELT",
+        penalty = penalty,
+        minseglen = minseglen,
+    ))
 end
 
 # NOTE: We don't specify shape here (default value ?)
@@ -49,10 +73,16 @@ end
 function cpt_gamma(x::Vector{Float64}, penalty::AbstractString, minseglen::Int)
     @assert minimum(x) > 0
     x = x .- minimum(x) .+ 0.1
-    r_cpts(changepoint[].cpt_meanvar(x, var"test.stat"="Gamma", method="PELT", penalty=penalty, minseglen=minseglen))
+    r_cpts(changepoint[].cpt_meanvar(
+        x,
+        var"test.stat" = "Gamma",
+        method = "PELT",
+        penalty = penalty,
+        minseglen = minseglen,
+    ))
 end
 
 function cpt_np(x::Vector{Float64}, penalty::AbstractString, minseglen::Int)
     @assert minimum(x) > 0
-    r_cpts(changepoint_np[].cpt_np(x, penalty=penalty, minseglen=minseglen))
+    r_cpts(changepoint_np[].cpt_np(x, penalty = penalty, minseglen = minseglen))
 end
