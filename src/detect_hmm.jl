@@ -3,7 +3,7 @@ function prior(data)
     tp = TransitionDistributionPrior(Gamma(1, 1 / 0.01), Gamma(1, 1 / 0.01), Beta(500, 1))
     op = DPMMObservationModelPrior{Normal}(
         # NormalInverseChisq(obs_med, obs_var, 1, 10),
-        NormalInverseChisq(obs_med, 20, 1, 10),
+        NormalInverseChisq(obs_med, 20, 1, 5),
         Gamma(1, 0.5),
     )
     BlockedSamplerPrior(1.0, tp, op)
