@@ -7,6 +7,5 @@
 # TODO: Julia function to install those packages.
 R -e "install.packages('changepoint', repos = 'http://cran.us.r-project.org')"
 R -e "install.packages('changepoint.np', repos = 'http://cran.us.r-project.org')"
-
-pip install -r external/rtt/requirements.txt
+pip install munkres
 ```
