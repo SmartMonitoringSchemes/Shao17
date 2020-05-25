@@ -15,7 +15,7 @@ struct WeightedEvaluationResult
     fn::Int
     precision::Float64
     recall::Float64
-    dis::Float64
+    dis::Union{Float64,Nothing}
     score::Float64
 end
 

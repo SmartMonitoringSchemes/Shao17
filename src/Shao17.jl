@@ -16,6 +16,7 @@ export cpt_normal,
     cpt_exp,
     cpt_gamma,
     cpt_np,
+    cpt_mm,
     cpt_hmm,
     EvaluationResult,
     WeightedEvaluationResult,
@@ -26,6 +27,7 @@ export cpt_normal,
     f2w
 
 # https://github.com/JuliaPy/PyCall.jl#using-pycall-from-julia-modules
+const BayesianGaussianMixture = PyNULL()
 const rtt_benchmark = PyNULL()
 
 # https://github.com/JuliaInterop/RCall.jl/issues/287
@@ -38,6 +40,7 @@ function __init__()
         PyVector(pyimport("sys")."path"),
         joinpath(@__DIR__, "..", "external", "rtt"),
     )
+    copy!(BayesianGaussianMixture, pyimport("sklearn.mixture").BayesianGaussianMixture)
     copy!(rtt_benchmark, pyimport("localutils.benchmark"))
 
     # R modules
@@ -47,6 +50,7 @@ end
 
 include("benchmark.jl")
 include("detect.jl")
+include("detect_mm.jl")
 include("detect_hmm.jl")
 
 end
