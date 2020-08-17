@@ -8,6 +8,7 @@ X = vcat(fill(1.0, 100), fill(100.0, 100))
 
     @test cpt_gamma(X, "MBIC", 3) == [101]
     @test cpt_normal(X, "MBIC", 3) == [101]
+    @test cpt_np(X, "MBIC", 3) == [101]
     @test cpt_poisson(X, "MBIC", 3) == [101]
     @test cpt_poisson_naive(X, "MBIC", 3) == [101]
 
