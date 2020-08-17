@@ -15,6 +15,9 @@ X = vcat(fill(1.0, 100), fill(100.0, 100))
     eval = evaluation_window([0,1,0,1], [0,1,0,0])
     @test eval.tp == 3
     @test eval.fn == 1
+
+    @test f1(eval) == 0.75
+    @test f2(eval) == 0.75
 end
 
 @testset "Python functions" begin
