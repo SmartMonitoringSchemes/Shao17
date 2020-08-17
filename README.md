@@ -21,7 +21,7 @@ R -e "install.packages('changepoint', repos = 'http://cran.us.r-project.org')"
 R -e "install.packages('changepoint.np', repos = 'http://cran.us.r-project.org')"
 
 # Python dependencies
-pip install munkres
+pip install munkres scikit-learn
 ```
 
 ```bash
