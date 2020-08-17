@@ -40,7 +40,7 @@ function __init__()
         PyVector(pyimport("sys")."path"),
         joinpath(@__DIR__, "..", "external", "rtt"),
     )
-    copy!(BayesianGaussianMixture, pyimport("sklearn.mixture").BayesianGaussianMixture)
+    copy!(BayesianGaussianMixture, pyimport_conda("sklearn.mixture", "scikit-learn").BayesianGaussianMixture)
     copy!(rtt_benchmark, pyimport("localutils.benchmark"))
 
     # R modules

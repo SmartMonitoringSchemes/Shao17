@@ -29,7 +29,10 @@ jobs:
           R -e "install.packages('changepoint.np', repos = 'http://cran.us.r-project.org')"
           pip install munkres scikit-learn
       - name: "Run Julia tests"
+        # The first two lines are required to fix a segfault with R and RCall.
         run: |
+          export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:`R RHOME`/lib"
+          julia --project=. -e 'using Pkg; Pkg.instantiate(); using RCall'
           julia --project=. --check-bounds=yes -e 'using Pkg; Pkg.test(coverage=true);'
       - name: "Upload coverage"
         # Don't fail if the Codecov API times out.
