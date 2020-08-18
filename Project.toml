@@ -11,5 +11,6 @@ PyCall = "438e738f-606a-5dbb-bf0a-cddfbfd45ab0"
 RCall = "6f49c342-dc21-5d91-9882-a32aef131414"
 
 [compat]
-RCall = "0.13"
 ConjugatePriors = "0.4"
+HDPHMM = "0.9"
+RCall = "0.13"
