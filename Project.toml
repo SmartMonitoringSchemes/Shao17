@@ -12,7 +12,7 @@ RCall = "6f49c342-dc21-5d91-9882-a32aef131414"
 
 [compat]
 ConjugatePriors = "0.4"
-Distributions = "0.23"
+Distributions = "0.23, 0.24"
 HDPHMM = "0.9"
 PyCall = "1.91"
 RCall = "0.13"
