@@ -1,7 +1,7 @@
 # Shao17
 
 [![Coverage](https://img.shields.io/codecov/c/github/SmartMonitoringSchemes/Shao17?logo=codecov&logoColor=white)](https://app.codecov.io/gh/SmartMonitoringSchemes/Shao17)
-[![Tests](https://img.shields.io/github/workflow/status/SmartMonitoringSchemes/Shao17/Tests?logo=github&label=tests)](https://github.com/SmartMonitoringSchemes/Shao17/actions/workflows/tests.yml)
+[![Tests](https://img.shields.io/github/actions/workflow/status/SmartMonitoringSchemes/Shao17/tests.yml?logo=github&label=tests)](https://github.com/SmartMonitoringSchemes/Shao17/actions/workflows/tests.yml)
 
 In this repository, we reproduce (partially) the results of the following paper:
 -  W. Shao, J. Rougier, A. Paris, F. Devienne and M. Viste, "One-to-One Matching of RTT and Path Changes," _2017 29th International Teletraffic Congress (ITC 29)_, Genoa, 2017, pp. 196-204. https://arxiv.org/pdf/1709.04819.pdf.
